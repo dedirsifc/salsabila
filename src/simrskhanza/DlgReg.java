@@ -9,9 +9,7 @@
  * Created on Jun 8, 2010, choose Tools | Templates
  * and open the template in10:28:56 PM
  */
-
-//RSIFC
-
+//test git baru
 
 package simrskhanza;
 

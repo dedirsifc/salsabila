@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="162" pageHeight="53" columnWidth="158" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" uuid="3c80a3ce-0b0f-4a4b-96e2-d807fd204657">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nama" class="java.lang.String"/>
+	<parameter name="namars" class="java.lang.String"/>
+	<parameter name="alamatrs" class="java.lang.String"/>
+	<parameter name="kotars" class="java.lang.String"/>
+	<parameter name="propinsirs" class="java.lang.String"/>
+	<parameter name="kontakrs" class="java.lang.String"/>
+	<parameter name="alamat" class="java.lang.String"/>
+	<parameter name="norm" class="java.lang.String"/>
+	<parameter name="no_rawat" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+reg_periksa.no_rawat,
+pasien.nm_pasien,
+reg_periksa.no_rkm_medis,
+pasien.tgl_lahir,
+pasien.no_ktp
+FROM
+reg_periksa INNER JOIN
+pasien ON
+reg_periksa.no_rkm_medis=pasien.no_rkm_medis
+WHERE
+reg_periksa.no_rawat= $P{no_rawat}]]>
+	</queryString>
+	<field name="no_ktp" class="java.lang.String"/>
+	<field name="no_rkm_medis" class="java.lang.String"/>
+	<field name="nm_pasien" class="java.lang.String"/>
+	<field name="tgl_lahir" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="12" width="30" height="9" uuid="e013931d-a7eb-48fd-a45e-b1fd057526e8"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="21" width="24" height="9" uuid="58576ec9-42c5-4dc4-94fa-88024e5298be"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[No.RM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="21" width="9" height="9" uuid="8e56cc05-9581-4605-8043-5d467d197102"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="12" width="3" height="9" uuid="7ff09409-6ac8-4487-80f8-e871acab5976"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="30" width="30" height="9" uuid="963b71e1-6651-47b4-b04b-dddb407aac71"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="30" width="3" height="9" uuid="c2624c58-8ba9-43d7-94a5-2628756334ba"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="53" y="30" width="103" height="9" uuid="b4b8f51c-997c-450f-9c31-612cbe5d1078"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_ktp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="21" width="35" height="9" uuid="fdcd1d57-17d5-460e-aec2-3aaa891bf1b9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_rkm_medis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="12" width="103" height="9" uuid="39f8e180-289f-4972-8bc2-98aa1ded2754"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="21" width="30" height="9" uuid="78712cc4-7407-4e9c-81cf-c9dab24051bf"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tgl.Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="21" width="3" height="9" uuid="ae97685f-fc42-4ed4-bed8-b2574dcc6d01"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy">
+				<reportElement x="53" y="21" width="38" height="9" uuid="f911cdaf-fdca-4bbd-a932-9ae363adbf58"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_lahir}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
